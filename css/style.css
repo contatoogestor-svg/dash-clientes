@@ -667,101 +667,82 @@ body {
   }
 
   .funnel-container {
-    padding: 0 12px 20px;
+    padding: 0 8px 20px;
     margin: 16px auto;
   }
 
-  /* ── Mobile funnel: block + cost inline ── */
+  /* ── Mobile funnel: same layout as desktop, scaled down ── */
   .funnel-step {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    grid-template-columns: 0fr 1fr auto;
   }
 
   .funnel-spacer {
     display: none;
   }
 
-  .funnel-block {
-    clip-path: none !important;
-    border-radius: 10px;
-    min-height: auto !important;
-    padding: 14px 16px !important;
-  }
-
   .funnel-block .step-label {
-    font-size: 11px !important;
-    margin-bottom: 2px;
+    font-size: 9px !important;
+    letter-spacing: 0.3px;
   }
 
   .funnel-block .step-value {
-    font-size: 24px !important;
+    font-size: 18px !important;
+  }
+
+  .funnel-block {
+    min-height: 52px !important;
+    padding: 10px 8px !important;
   }
 
   .funnel-block .step-edit-icon {
-    top: 8px;
-    right: 12px !important;
+    top: 6px;
+    right: calc(var(--indent-top) + 8px);
+    font-size: 11px;
   }
 
   .funnel-block .step-input {
-    font-size: 20px !important;
-    width: 120px;
+    font-size: 16px !important;
+    width: 90px;
+    padding: 2px 6px;
   }
 
-  /* Cost metric appears as compact tag below block */
+  /* Cost metrics: compact on mobile */
   .funnel-connector {
-    padding: 0;
-    justify-content: center;
-    margin-top: -4px;
-    margin-bottom: 2px;
+    padding-left: 6px;
+    gap: 4px;
   }
 
   .connector-line {
-    display: none;
-  }
-
-  .cost-metric {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 14px;
-    background: var(--bg-card);
-    border-radius: 0 0 8px 8px;
-    border: 1px solid var(--border);
-    border-top: none;
+    width: 16px;
   }
 
   .cost-metric .cost-label {
-    font-size: 10px;
-    margin-bottom: 0;
+    font-size: 9px;
   }
 
   .cost-metric .cost-value {
     font-size: 13px;
   }
 
-  /* Rate badges compact */
+  /* Rate badges smaller */
   .funnel-rate-row {
-    display: flex;
-    justify-content: center;
-    margin: 4px 0;
+    grid-template-columns: 0fr 1fr auto;
   }
 
-  .rate-spacer {
+  .rate-spacer:first-child {
     display: none;
   }
 
   .rate-badge {
-    padding: 3px 12px;
-    font-size: 12px;
-    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 11px;
+    gap: 4px;
   }
 }
 
 @media (max-width: 380px) {
   .header-left {
-    gap: 10px;
+    gap: 8px;
   }
 
   .client-logo {
@@ -775,10 +756,18 @@ body {
   }
 
   .funnel-block .step-value {
-    font-size: 20px !important;
+    font-size: 16px !important;
   }
 
-  .funnel-block {
-    padding: 12px 14px !important;
+  .funnel-block .step-label {
+    font-size: 8px !important;
+  }
+
+  .cost-metric .cost-value {
+    font-size: 12px;
+  }
+
+  .connector-line {
+    width: 10px;
   }
 }
