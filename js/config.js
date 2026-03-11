@@ -19,19 +19,19 @@ const DASH_CONFIG = {
   // Mapeamento de clientes (plataformas disponiveis + logo)
   clients: {
     'nutrigene':        { nome: 'Clinica Nutrigene',          plataformas: ['google', 'meta'], logo: 'nutrigene.png' },
-    'run-fitness':      { nome: 'Run Fitness Club',           plataformas: ['google', 'meta'], logo: null },
-    'fisiocardio':      { nome: 'Fisiocárdio',                plataformas: ['google', 'meta'], logo: null },
-    'artoria':          { nome: 'Artória Restaurante',        plataformas: ['google'],         logo: null },
-    'dog-time':         { nome: 'Dog Time',                   plataformas: ['google', 'meta'], logo: null },
-    'quebeck':          { nome: 'Quebeck Automação',          plataformas: ['google', 'meta'], logo: null },
-    'charme-coqueteis': { nome: 'Charme Coquetéis',           plataformas: ['google'],         logo: null },
-    'tecnomanutencao':  { nome: 'Tecnomanutenção',            plataformas: ['google'],         logo: null },
-    'ser-tecnologia':   { nome: 'Ser Tecnologia',             plataformas: ['google'],         logo: null },
-    'tm-estetica':      { nome: 'TM Estética Automotiva',     plataformas: ['google'],         logo: null },
-    'grafica-sf':       { nome: 'Gráfica Sagrada Família',    plataformas: ['google'],         logo: null },
-    'angatu':           { nome: 'Angatu',                     plataformas: ['meta'],           logo: null },
-    'crossfit-tavros':  { nome: 'Crossfit Távros',            plataformas: ['meta'],           logo: null },
-    'guardian':         { nome: 'Guardian Monitoramento',      plataformas: ['meta'],           logo: null }
+    'run-fitness':      { nome: 'Run Fitness Club',           plataformas: ['google', 'meta'], logo: 'run-fitness.png' },
+    'fisiocardio':      { nome: 'Fisiocárdio',                plataformas: ['google', 'meta'], logo: 'fisiocardio.png' },
+    'artoria':          { nome: 'Artória Restaurante',        plataformas: ['google'],         logo: 'artoria.png' },
+    'dog-time':         { nome: 'Dog Time',                   plataformas: ['google', 'meta'], logo: 'dog-time.png' },
+    'quebeck':          { nome: 'Quebeck Automação',          plataformas: ['google', 'meta'], logo: 'quebeck.png' },
+    'charme-coqueteis': { nome: 'Charme Coquetéis',           plataformas: ['google'],         logo: 'charme-coqueteis.png' },
+    'tecnomanutencao':  { nome: 'Tecnomanutenção',            plataformas: ['google'],         logo: 'tecnomanutencao.png' },
+    'ser-tecnologia':   { nome: 'Ser Tecnologia',             plataformas: ['google'],         logo: 'ser-tecnologia.png' },
+    'tm-estetica':      { nome: 'TM Estética Automotiva',     plataformas: ['google'],         logo: 'tm-estetica.avif' },
+    'grafica-sf':       { nome: 'Gráfica Sagrada Família',    plataformas: ['google'],         logo: 'grafica-sf.jpg' },
+    'angatu':           { nome: 'Angatu',                     plataformas: ['meta'],           logo: 'angatu.png' },
+    'crossfit-tavros':  { nome: 'Crossfit Távros',            plataformas: ['meta'],           logo: 'crossfit-tavros.png' },
+    'guardian':         { nome: 'Guardian Monitoramento',      plataformas: ['meta'],           logo: 'guardian.png' }
   },
 
   // Definicoes dos funis por plataforma
