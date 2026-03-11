@@ -600,13 +600,29 @@ body {
 
 @media (max-width: 768px) {
   .header {
-    padding: 16px 20px;
+    padding: 14px 16px;
+    gap: 12px;
   }
 
   .header-center {
     order: -1;
     width: 100%;
     justify-content: center;
+  }
+
+  .adsflow-logo {
+    height: 72px;
+  }
+
+  .client-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    padding: 8px;
+  }
+
+  .header-info h1 {
+    font-size: 16px;
   }
 
   .platform-selector {
@@ -621,9 +637,10 @@ body {
   }
 
   .period-bar {
-    padding: 12px 20px;
+    padding: 10px 16px;
     flex-direction: column;
     align-items: flex-start;
+    gap: 8px;
   }
 
   .period-presets {
@@ -631,30 +648,72 @@ body {
     overflow-x: auto;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
+    gap: 4px;
   }
 
   .period-btn {
     flex-shrink: 0;
+    padding: 6px 12px;
+    font-size: 12px;
   }
 
   .investment-banner {
-    margin: 16px 20px 0;
+    margin: 12px 16px 0;
+    padding: 12px 16px;
+  }
+
+  .investment-value {
+    font-size: 18px;
   }
 
   .funnel-container {
-    padding: 0 16px 24px;
-    margin: 20px auto;
+    padding: 0 12px 20px;
+    margin: 16px auto;
   }
 
-  /* Stack funnel on mobile */
+  /* ── Mobile funnel: block + cost inline ── */
   .funnel-step {
-    grid-template-columns: 1fr;
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
+  .funnel-spacer {
+    display: none;
+  }
+
+  .funnel-block {
+    clip-path: none !important;
+    border-radius: 10px;
+    min-height: auto !important;
+    padding: 14px 16px !important;
+  }
+
+  .funnel-block .step-label {
+    font-size: 11px !important;
+    margin-bottom: 2px;
+  }
+
+  .funnel-block .step-value {
+    font-size: 24px !important;
+  }
+
+  .funnel-block .step-edit-icon {
+    top: 8px;
+    right: 12px !important;
+  }
+
+  .funnel-block .step-input {
+    font-size: 20px !important;
+    width: 120px;
+  }
+
+  /* Cost metric appears as compact tag below block */
   .funnel-connector {
-    padding-left: 0;
+    padding: 0;
     justify-content: center;
+    margin-top: -4px;
+    margin-bottom: 2px;
   }
 
   .connector-line {
@@ -663,17 +722,30 @@ body {
 
   .cost-metric {
     text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
     background: var(--bg-card);
-    border-radius: 8px;
-    padding: 10px 16px;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid var(--border);
+    border-top: none;
   }
 
-  .funnel-spacer {
-    display: none;
+  .cost-metric .cost-label {
+    font-size: 10px;
+    margin-bottom: 0;
   }
 
+  .cost-metric .cost-value {
+    font-size: 13px;
+  }
+
+  /* Rate badges compact */
   .funnel-rate-row {
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: center;
+    margin: 4px 0;
   }
 
   .rate-spacer {
@@ -681,33 +753,32 @@ body {
   }
 
   .rate-badge {
-    justify-self: center;
-  }
-
-  .funnel-block .step-value {
-    font-size: 24px !important;
+    padding: 3px 12px;
+    font-size: 12px;
+    border-radius: 14px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 380px) {
+  .header-left {
+    gap: 10px;
+  }
+
+  .client-logo {
+    width: 48px;
+    height: 48px;
+    padding: 6px;
+  }
+
   .header-info h1 {
-    font-size: 16px;
-  }
-
-  .investment-value {
-    font-size: 18px;
-  }
-
-  .funnel-block {
-    min-height: 64px !important;
-    padding: 14px 12px !important;
+    font-size: 14px;
   }
 
   .funnel-block .step-value {
     font-size: 20px !important;
   }
 
-  .cost-metric .cost-value {
-    font-size: 15px;
+  .funnel-block {
+    padding: 12px 14px !important;
   }
 }
