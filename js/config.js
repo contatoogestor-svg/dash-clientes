@@ -4,10 +4,9 @@
 
 const DASH_CONFIG = {
   // URL do Google Apps Script Web App (backend)
-  // Atualizar apos deploy do Apps Script
   API_URL: 'https://script.google.com/macros/s/AKfycbwRByKyzD4bGF17hDO9CURckf4u9lVcKm1cbzc_wad1X0htPlQ2HJLUO3dd2fDFqrus/exec',
 
-  // Token de autenticacao (sera gerado no deploy)
+  // Token de autenticacao
   API_TOKEN: '',
 
   // Cliente padrao (pode ser override via ?cliente=xxx na URL)
@@ -16,6 +15,24 @@ const DASH_CONFIG = {
   // Formato de moeda
   CURRENCY: 'BRL',
   LOCALE: 'pt-BR',
+
+  // Mapeamento de clientes (plataformas disponiveis + logo)
+  clients: {
+    'nutrigene':        { nome: 'Clinica Nutrigene',          plataformas: ['google', 'meta'], logo: 'nutrigene.png' },
+    'run-fitness':      { nome: 'Run Fitness Club',           plataformas: ['google', 'meta'], logo: null },
+    'fisiocardio':      { nome: 'Fisiocárdio',                plataformas: ['google', 'meta'], logo: null },
+    'artoria':          { nome: 'Artória Restaurante',        plataformas: ['google'],         logo: null },
+    'dog-time':         { nome: 'Dog Time',                   plataformas: ['google', 'meta'], logo: null },
+    'quebeck':          { nome: 'Quebeck Automação',          plataformas: ['google', 'meta'], logo: null },
+    'charme-coqueteis': { nome: 'Charme Coquetéis',           plataformas: ['google'],         logo: null },
+    'tecnomanutencao':  { nome: 'Tecnomanutenção',            plataformas: ['google'],         logo: null },
+    'ser-tecnologia':   { nome: 'Ser Tecnologia',             plataformas: ['google'],         logo: null },
+    'tm-estetica':      { nome: 'TM Estética Automotiva',     plataformas: ['google'],         logo: null },
+    'grafica-sf':       { nome: 'Gráfica Sagrada Família',    plataformas: ['google'],         logo: null },
+    'angatu':           { nome: 'Angatu',                     plataformas: ['meta'],           logo: null },
+    'crossfit-tavros':  { nome: 'Crossfit Távros',            plataformas: ['meta'],           logo: null },
+    'guardian':         { nome: 'Guardian Monitoramento',      plataformas: ['meta'],           logo: null }
+  },
 
   // Definicoes dos funis por plataforma
   funnels: {

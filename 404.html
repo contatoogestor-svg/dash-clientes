@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecionando...</title>
+  <script>
+    // SPA redirect para GitHub Pages
+    // /nutrigene → /?cliente=nutrigene
+    var path = window.location.pathname;
+    var segments = path.split('/').filter(Boolean);
+    // Remove o prefixo do repo se houver (ex: /dash-clientes/nutrigene)
+    var slug = segments[segments.length - 1];
+    if (slug && slug !== 'dash-clientes') {
+      var base = window.location.origin + window.location.pathname.replace('/' + slug, '/');
+      window.location.replace(base + '?cliente=' + slug);
+    } else {
+      window.location.replace(window.location.origin + window.location.pathname);
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecionando...</p>
+</body>
+</html>

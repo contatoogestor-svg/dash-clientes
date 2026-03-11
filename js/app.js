@@ -19,9 +19,12 @@ const DashApp = {
    * Inicializa o dashboard
    */
   init() {
-    // Pega cliente da URL ou usa padrao
+    // Pega cliente da URL: ?cliente=slug ou /slug (via 404.html redirect)
     const params = new URLSearchParams(window.location.search);
     this.state.cliente = params.get('cliente') || DASH_CONFIG.DEFAULT_CLIENT;
+
+    // Busca config do cliente pra saber plataformas disponiveis
+    this.loadClientConfig();
 
     // Seta datas padrao (mes atual)
     this.setDefaultDates();
@@ -31,6 +34,42 @@ const DashApp = {
 
     // Carrega dados
     this.loadData();
+  },
+
+  /**
+   * Carrega config do cliente e ajusta UI de plataformas
+   */
+  loadClientConfig() {
+    const clientConfig = DASH_CONFIG.clients[this.state.cliente];
+    if (clientConfig) {
+      this.state.plataformas = clientConfig.plataformas;
+
+      // Define plataforma inicial (primeira disponivel)
+      if (!this.state.plataformas.includes(this.state.platform)) {
+        this.state.platform = this.state.plataformas[0];
+      }
+
+      // Esconde seletor se so tem uma plataforma
+      const selector = document.querySelector('.platform-selector');
+      if (this.state.plataformas.length === 1) {
+        selector.style.display = 'none';
+      } else {
+        selector.style.display = 'flex';
+        // Desabilita botoes de plataformas nao disponiveis
+        document.querySelectorAll('.platform-btn').forEach(btn => {
+          if (!this.state.plataformas.includes(btn.dataset.platform)) {
+            btn.style.display = 'none';
+          } else {
+            btn.style.display = 'flex';
+          }
+        });
+      }
+
+      // Ativa o botao correto
+      document.querySelectorAll('.platform-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.querySelector(`.platform-btn[data-platform="${this.state.platform}"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
   },
 
   /**
@@ -173,9 +212,27 @@ const DashApp = {
       document.getElementById('investmentValue').textContent =
         FunnelRenderer.formatCurrency(data.investimento);
 
-      // Atualiza nome do cliente
-      if (data.clienteNome) {
-        document.getElementById('clientName').textContent = data.clienteNome;
+      // Atualiza nome do cliente (prioriza config local, depois API)
+      const clientConfig = DASH_CONFIG.clients[this.state.cliente];
+      const nome = (clientConfig && clientConfig.nome) || data.clienteNome || this.state.cliente;
+      document.getElementById('clientName').textContent = nome;
+
+      // Atualiza logo do cliente
+      const logoImg = document.getElementById('clientLogoImg');
+      if (logoImg && clientConfig && clientConfig.logo) {
+        logoImg.src = 'assets/logos/' + clientConfig.logo;
+        logoImg.alt = nome;
+      } else if (logoImg) {
+        // Sem logo: mostra inicial
+        logoImg.style.display = 'none';
+        const parent = logoImg.parentElement;
+        if (!parent.querySelector('.client-initial')) {
+          const span = document.createElement('span');
+          span.className = 'client-initial';
+          span.style.cssText = 'font-size:36px;font-weight:800;color:var(--accent);';
+          span.textContent = nome.charAt(0);
+          parent.appendChild(span);
+        }
       }
 
       // Atualiza ultima atualizacao
