@@ -31,7 +31,8 @@ const DASH_CONFIG = {
     'grafica-sf':       { nome: 'Gráfica Sagrada Família',    plataformas: ['google'],         logo: 'grafica-sf.jpg' },
     'angatu':           { nome: 'Angatu',                     plataformas: ['meta'],           logo: 'angatu.png' },
     'crossfit-tavros':  { nome: 'Crossfit Távros',            plataformas: ['meta'],           logo: 'crossfit-tavros.png' },
-    'guardian':         { nome: 'Guardian Monitoramento',      plataformas: ['meta'],           logo: 'guardian.png' }
+    'guardian':         { nome: 'Guardian Monitoramento',      plataformas: ['google', 'meta'], logo: 'guardian.png' },
+    'cre-ser':          { nome: 'CRE.SER',                     plataformas: ['google'],         logo: 'cre-ser.svg'  }
   },
 
   // Definicoes dos funis por plataforma
