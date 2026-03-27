@@ -4,7 +4,7 @@
 
 const DASH_CONFIG = {
   // URL do Google Apps Script Web App (backend)
-  API_URL: 'https://script.google.com/macros/s/AKfycbz5EB1sEEUMRLpyLjWf02tyykJ5jGg09zzmg30MZcNOU6I92fG9hFoUa8jngqcGjReR/exec',
+  API_URL: 'https://script.google.com/macros/s/AKfycbz5D5UkxfppzUp0Tzg6cpwusT5yGBU6LNP3VUux79aJ5LdR_tmzw2z9t3ntosmSrQTO/exec',
 
   // Token de autenticacao
   API_TOKEN: '',
