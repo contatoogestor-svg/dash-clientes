@@ -77,6 +77,16 @@ body {
   filter: grayscale(100%) brightness(1.8) contrast(0.9);
 }
 
+.client-logo.logo-white-bg {
+  background: #ffffff;
+  padding: 8px;
+}
+
+.client-logo.logo-white-bg img {
+  filter: none;
+  object-fit: contain;
+}
+
 .header-info h1 {
   font-size: 18px;
   font-weight: 700;

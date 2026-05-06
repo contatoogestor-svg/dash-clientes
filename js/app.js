@@ -222,6 +222,9 @@ const DashApp = {
       if (logoImg && clientConfig && clientConfig.logo) {
         logoImg.src = 'assets/logos/' + clientConfig.logo;
         logoImg.alt = nome;
+        // JPG/JPEG tem fundo branco — remove filtro e adiciona fundo branco no container
+        const isJpg = /\.(jpg|jpeg)$/i.test(clientConfig.logo);
+        logoImg.parentElement.classList.toggle('logo-white-bg', isJpg);
       } else if (logoImg) {
         // Sem logo: mostra inicial
         logoImg.style.display = 'none';
