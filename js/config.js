@@ -34,6 +34,7 @@ const DASH_CONFIG = {
     'guardian':         { nome: 'Guardian Monitoramento',      plataformas: ['google', 'meta'], logo: 'guardian.png' },
     'cre-ser':          { nome: 'CRE.SER',                     plataformas: ['google'],         logo: 'cre-ser.svg'  },
     'somos-de-sol':     { nome: 'Somos de Sol',                 plataformas: ['meta'],           logo: 'somos-de-sol.jpg' }
+    // [AIOX:FIM_CLIENTS_JS]
   },
 
   // Definicoes dos funis por plataforma
