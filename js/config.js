@@ -33,7 +33,8 @@ const DASH_CONFIG = {
     'crossfit-tavros':  { nome: 'Crossfit Távros',            plataformas: ['meta'],           logo: 'crossfit-tavros.png' },
     'guardian':         { nome: 'Guardian Monitoramento',      plataformas: ['google', 'meta'], logo: 'guardian.png' },
     'cre-ser':          { nome: 'CRE.SER',                     plataformas: ['google'],         logo: 'cre-ser.svg'  },
-    'somos-de-sol':     { nome: 'Somos de Sol',                 plataformas: ['meta'],           logo: 'somos-de-sol.jpg' }
+    'somos-de-sol':     { nome: 'Somos de Sol',                 plataformas: ['meta'],           logo: 'somos-de-sol.jpg' },
+    'arcoresiduos':     { nome: 'Arco Resíduos',                plataformas: ['meta'],           logo: 'arcoresiduos.svg' }
     // [AIOX:FIM_CLIENTS_JS]
   },
 
